@@ -5,9 +5,8 @@ import { links } from "@/lib/constants"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsCart3 } from "react-icons/bs"
-import { RiMenuLine } from "react-icons/ri"
 import Image from 'next/image'
-
+import { SheetDemo } from './SideBar'
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -19,7 +18,7 @@ const Navbar = () => {
 
                 <div className='flex items-center py-8 lg:py-0'>
                     <div className='flex items-center gap-3'>
-                        <RiMenuLine  className="text-[#b6bcc8] w-auto h-7 lg:hidden" />
+                        <SheetDemo />
                         <Link href="/">
                             <h1 className='text-2xl md:text-4xl font-bold'>
                                 sneakers

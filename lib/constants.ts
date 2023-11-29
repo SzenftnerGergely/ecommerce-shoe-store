@@ -5,3 +5,4 @@ export const links = [
     { name: 'About', href: '/About' },
     { name: 'Contact', href: '/Contact' },
 ]
+

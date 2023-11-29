@@ -65,7 +65,7 @@ const Hero = () => {
                 <SiPuma className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
                 <SiReebok className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
             </motion.div>
-
+                
 
         </section>
 
