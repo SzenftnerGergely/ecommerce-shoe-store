@@ -5,8 +5,6 @@ import Image from 'next/image'
 import { SiNike, SiAdidas, SiNewbalance, SiPuma, SiReebok } from "react-icons/si"
 import { motion } from "framer-motion"
 
-
-
 const Hero = () => {
     return (
 

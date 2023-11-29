@@ -1,14 +1,12 @@
 import { RiMenuLine } from "react-icons/ri"
+import { links } from "@/lib/constants"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
     Sheet,
     SheetContent,
     SheetTrigger,
-    SheetClose
 } from "@/components/ui/sheet"
-import { links } from "@/lib/constants"
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { Button } from "@/components/ui/button"
 
 export function SheetDemo() {
     const pathname = usePathname()
