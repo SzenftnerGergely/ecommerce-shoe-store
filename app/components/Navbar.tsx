@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation'
 import { BsCart3 } from "react-icons/bs"
 import Image from 'next/image'
 import { SheetDemo } from './SideBar'
+import { motion } from "framer-motion"
+import { type } from 'os'
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -19,11 +21,16 @@ const Navbar = () => {
                 <div className='flex items-center py-8 lg:py-0'>
                     <div className='flex items-center gap-3'>
                         <SheetDemo />
-                        <Link href="/">
-                            <h1 className='text-2xl md:text-4xl font-bold'>
-                                sneakers
-                            </h1>
-                        </Link>
+                        <motion.div
+                            whileHover={{y: -5}}
+                        >
+                            <Link href="/">
+                                <h1 className='text-2xl md:text-4xl font-bold'>
+                                    sneakers
+                                </h1>
+                            </Link>
+                        </motion.div>
+
                     </div>
 
                     <nav className='hidden gap-10 lg:flex ml-16'>

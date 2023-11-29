@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import { SiNike, SiAdidas, SiNewbalance, SiPuma, SiReebok } from "react-icons/si"
 import { motion } from "framer-motion"
+import Link from "next/link";
 
 const Hero = () => {
     return (
@@ -57,13 +58,51 @@ const Hero = () => {
                     once: true
                 }}
             >
-                <SiNike className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
-                <SiAdidas className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
-                <SiNewbalance className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
-                <SiPuma className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
-                <SiReebok className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                    <Link href="/Nike">
+                        <SiNike className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                    <Link href="/Adidas">
+                        <SiAdidas className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                    <Link href="/Newbalance">
+                        <SiNewbalance className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                    <Link href="/Puma">
+                        <SiPuma className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                    </Link>
+                </motion.div>
+
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                    <Link href="/Reebook">
+                        <SiReebok className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                    </Link>
+                </motion.div>
             </motion.div>
-                
 
         </section>
 
