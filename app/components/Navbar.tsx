@@ -8,7 +8,6 @@ import { BsCart3 } from "react-icons/bs"
 import Image from 'next/image'
 import { SheetDemo } from './SideBar'
 import { motion } from "framer-motion"
-import { type } from 'os'
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -22,7 +21,7 @@ const Navbar = () => {
                     <div className='flex items-center gap-3'>
                         <SheetDemo />
                         <motion.div
-                            whileHover={{y: -5}}
+                            whileHover={{ y: -5, borderBottomColor: "#ff7d1a", borderBottomWidth: "3px" }}
                         >
                             <Link href="/">
                                 <h1 className='text-2xl md:text-4xl font-bold'>

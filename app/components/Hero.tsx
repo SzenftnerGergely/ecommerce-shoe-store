@@ -51,7 +51,7 @@ const Hero = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
                     type: "tween",
-                    duration: 0.5,
+                    duration: 0.2,
                 }}
                 whileInView="animate"
                 viewport={{
@@ -103,6 +103,14 @@ const Hero = () => {
                     </Link>
                 </motion.div>
             </motion.div>
+
+            <div className="divider divider-warning mt-10"></div>
+
+            <div className="w-full lg:flex-row sm:mx-auto flex flex-col justify-between gap-3 lg:gap-0 pt-16">
+                <div><Image src="https://www.famousfootwear.com/-/media/project/tenant/famous-footwear/famous-footwear/homepage/2023/holiday/1-story-2-assets/wk45_120323_1_story_left_crocs.jpg" alt='shoe' width={550} height={550} /></div>
+                <div className="divider divider-horizontal"></div>
+                <div><Image src="https://www.famousfootwear.com/-/media/project/tenant/famous-footwear/famous-footwear/homepage/2023/holiday/1-story-2-assets/wk45_120323_1_story_right_crocs.jpg" alt='shoe' width={550} height={550} /></div>
+            </div>
 
         </section>
 

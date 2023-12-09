@@ -13,7 +13,7 @@ export function SheetDemo() {
 
     return (
         <Sheet>
-            <SheetTrigger asChild>
+            <SheetTrigger >
                 <RiMenuLine variant="outline" className="text-[#b6bcc8] hover:text-gray-700 w-auto h-7 lg:hidden transition-all" />
             </SheetTrigger>
             <SheetContent side={"left"} className="pt-16">
