@@ -53,9 +53,9 @@ export default function Newest() {
             Our Newest products
           </h2>
 
-          <Link className="text-primary flex items-center gap-x-1" href="/all">
+          <Link className="group text-primary flex items-center gap-x-1" href="/all">
             See All{" "}
-            <span>
+            <span className="group-hover:translate-x-1 duration-200">
               <ArrowRight />
             </span>
           </Link>
@@ -86,7 +86,7 @@ export default function Newest() {
               slidesPerView: 4,
             },
           }}
-          className='h-96 w-full rounded-lg'
+          className='w-full rounded-lg'
         >
           <div>
             {data.map((product: simplifiedProduct) => (

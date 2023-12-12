@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Kumbh_Sans } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const kumbh_sans = Kumbh_Sans({
   weight: ['400', '500', '600', '700'],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={kumbh_sans.className}>
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   )
