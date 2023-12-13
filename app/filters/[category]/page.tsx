@@ -34,7 +34,7 @@ const CategoryPage = async ({params}: {params: {category: string}}) => {
     const data:simplifiedProduct[] = await getData(params.category)
     
     return (
-        <div className='bg-white'>
+        <div className='bg-white h-screen'>
         <div className='mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
             <div className='flex justify-between items-center'>
                 <h2 className='text-2xl font-bold tracking-tight text-gray-900'>Our Products for {params.category}</h2>
@@ -47,8 +47,7 @@ const CategoryPage = async ({params}: {params: {category: string}}) => {
                             <Image
                                 src={product.imageUrl}
                                 alt='Product image'
-                                className='w-full h-full object-cover 
-                                object-center lg:h-full lg:w-full'
+                                className="w-full h-full object-contain object-center lg:h-full lg:w-full"
                                 width={300}
                                 height={300}
                             />

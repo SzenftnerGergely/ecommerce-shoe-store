@@ -42,8 +42,8 @@ export default function Newest() {
       })
   }, [])
 
-  if (isLoading) return <p>Loading...</p>
-  if (!data) return <p>No profile data</p>
+  if (isLoading) return <div className="mx-auto w-full py-12 text-center"><p>Loading... <span className="loading loading-spinner text-warning"></span></p></div>
+  if (!data) return <p>No data</p>
 
   return (
     <div className="bg-white">
@@ -103,7 +103,7 @@ export default function Newest() {
 
                 <div className="mt-4 flex justify-around">
                   <div>
-                    <h3 className="text-sm text-gray-700">
+                    <h3 className="text-sm text-gray-700 hover:text-[#ff7d1a]">
                       <Link href={`/product/${product.slug}`}>
                         {product.name}
                       </Link>

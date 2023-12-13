@@ -27,7 +27,7 @@ const Brands = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     <Link href="/Nike">
-                        <SiNike className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                        <SiNike className="w-auto h-10 sm:h-16 hover:text-gray-600 hover:scale-105" />
                     </Link>
                 </motion.div>
 
@@ -36,7 +36,7 @@ const Brands = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     <Link href="/Adidas">
-                        <SiAdidas className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                        <SiAdidas className="w-auto h-10 sm:h-16 hover:text-gray-600 hover:scale-105" />
                     </Link>
                 </motion.div>
 
@@ -45,7 +45,7 @@ const Brands = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     <Link href="/Newbalance">
-                        <SiNewbalance className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                        <SiNewbalance className="w-auto h-10 sm:h-16 hover:text-gray-600 hover:scale-105" />
                     </Link>
                 </motion.div>
 
@@ -54,7 +54,7 @@ const Brands = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     <Link href="/Puma">
-                        <SiPuma className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                        <SiPuma className="w-auto h-10 sm:h-16 hover:text-gray-600 hover:scale-105" />
                     </Link>
                 </motion.div>
 
@@ -63,7 +63,7 @@ const Brands = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                     <Link href="/Reebook">
-                        <SiReebok className="w-auto h-16 hover:text-gray-600 hover:scale-105" />
+                        <SiReebok className="w-auto h-10 sm:h-16 hover:text-gray-600 hover:scale-105" />
                     </Link>
                 </motion.div>
             </motion.div>
