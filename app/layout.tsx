@@ -3,6 +3,8 @@ import { Kumbh_Sans } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import CartProvider from './components/Providers'
+import ShoppingCartModal from './components/ShoppingCartModal'
 
 const kumbh_sans = Kumbh_Sans({
   weight: ['400', '500', '600', '700'],
@@ -22,9 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kumbh_sans.className}>
-        <Navbar />
-        {children}
-        <Footer/>
+        <CartProvider>
+          <Navbar />
+          <ShoppingCartModal/>
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   )

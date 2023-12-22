@@ -8,9 +8,11 @@ import { BsCart3 } from "react-icons/bs"
 import Image from 'next/image'
 import { SheetDemo } from './SideBar'
 import { motion } from "framer-motion"
+import { useShoppingCart } from "use-shopping-cart"
 
 const Navbar = () => {
     const pathname = usePathname()
+    const {handleCartClick, cartCount} = useShoppingCart()
 
     return (
         <header>
@@ -56,9 +58,10 @@ const Navbar = () => {
                 <div className='flex items-center justify-between gap-10'>
                     <div className='p-2 rounded-full relative'>
                         <BsCart3
-                            className="w-7 h-7 text-[#b6bcc8] hover:text-black transition-all"
+                            className="w-7 h-7 text-[#b6bcc8] hover:text-black transition-all cursor-pointer"
+                            onClick={() => handleCartClick()}
                         />
-                        <div className='absolute right-0 top-0 bg-[#ff7d1a] text-white px-2 text-xs rounded-full'>3</div>
+                        <div className='absolute right-0 top-0 bg-[#ff7d1a] text-white px-2 text-xs rounded-full'>{cartCount}</div>
                     </div>
 
                     <div>

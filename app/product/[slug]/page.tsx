@@ -1,8 +1,8 @@
-
 import ImageGallery from '@/app/components/ImageGallery';
 import { client } from '@/app/lib/sanity'
 import { Truck } from 'lucide-react';
 import React from 'react'
+import AddToCart from '../../components/AddToCart';
 
 export interface fullProduct {
     _id: string,
@@ -37,8 +37,8 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
     const data: fullProduct = await getData(params.slug)
 
     return (
-        <div className='bg-white h-screen'>
-            <div className='mx-auto max-w-screen-xl px-4 md:px-8 mt-28'>
+        <div className='bg-white mb-12 sm:mb-0'>
+            <div className='mx-auto max-w-screen-xl px-4 md:px-8 sm:mt-28'>
                 <div className='grid gap-8 md:grid-cols-2'>
                     <ImageGallery images={data.images} />
 
@@ -54,7 +54,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
                                     ${data.price}
                                 </span>
                                 <span className='mb-0.5 text-red-500 line-through'>
-                                    ${data.price * 0.8}
+                                    ${data.price * 1.2}
                                 </span>
                             </div>
 
@@ -68,9 +68,18 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
                             <span className='text-sm'>2-4 Days Shipping</span>
                         </div>
 
-                        <p className='mt-12 text-base text-gray-500 tracking-wide'>
+                        <p className='mt-12 mb-10 text-base text-gray-500 tracking-wide'>
                             {data.description}
                         </p>
+                        <AddToCart
+                            currency='USD'
+                            description={data.description}
+                            image={data.images[0]}
+                            name={data.name}
+                            price={data.price}
+                            key={data._id}
+                            price_id={data.price_id}
+                        />
                     </div>
                 </div>
             </div>

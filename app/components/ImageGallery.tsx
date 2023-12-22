@@ -21,7 +21,7 @@ const ImageGallery = ({ images }: iAppProps) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null)
 
   return (
-    <section className='sm:min-h-screen sm:py-12'>
+    <section className='sm:min-h-screen'>
       <div className='container flex flex-col'>
         <Swiper
           spaceBetween={10}
