@@ -2,18 +2,16 @@
 
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 import Image from 'next/image'
-import { CartEntry } from 'use-shopping-cart/core'
 import { FaTrashAlt } from "react-icons/fa";
+import { CartEntry } from 'use-shopping-cart/core';
 
-export default function CartItem({ product }: CartEntry) {
-    const { name, image, quantity, price } = product
+ 
+export default function CartItem({ item }: CartEntry) {
+    const { name, image, quantity, price } = item
     const { removeItem } = useShoppingCart()
 
-    console.log(product);
-
-
     const removeItemFromCart = () => {
-        removeItem(product.id)
+        removeItem(item.id)
     }
 
     return (

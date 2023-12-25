@@ -40,7 +40,7 @@ export default function Newest() {
         setData(data)
         setLoading(false)
       })
-  }, [])
+  })
 
   if (isLoading) return <div className="mx-auto w-full py-12 text-center"><p>Loading... <span className="loading loading-spinner text-warning"></span></p></div>
   if (!data) return <p>No data</p>

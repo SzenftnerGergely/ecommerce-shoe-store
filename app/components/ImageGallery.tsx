@@ -7,6 +7,7 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
@@ -25,7 +26,11 @@ const ImageGallery = ({ images }: iAppProps) => {
       <div className='container flex flex-col'>
         <Swiper
           spaceBetween={10}
-          navigation={true}
+          navigation={{
+            nextEl: ".image-swiper-button-next",
+            prevEl: ".image-swiper-button-prev",
+            disabledClass: "swiper-button-disabled"
+          }}
           thumbs={{
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
@@ -33,6 +38,12 @@ const ImageGallery = ({ images }: iAppProps) => {
           modules={[FreeMode, Navigation, Thumbs]}
           className='w-64 sm:h-96 sm:w-full rounded-lg'
         >
+                  <div className="swiper-button image-swiper-button-next">
+          <IoIosArrowForward />
+        </div>
+        <div className="swiper-button image-swiper-button-prev">
+          <IoIosArrowBack />
+        </div>
           {images.map((image: string | StaticImport, index: number) => (
             <SwiperSlide key={index}>
               <div className='flex h-full w-full items-center justify-center'>

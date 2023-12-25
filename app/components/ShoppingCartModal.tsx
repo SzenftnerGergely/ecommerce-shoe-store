@@ -14,23 +14,24 @@ import CartItem from './CartItem'
 import Link from 'next/link'
 import { BsCart2 } from 'react-icons/bs'
 
-function closeDropdown() {
-  const elem = document.activeElement as HTMLElement
-  if (elem) {
-    elem.blur()
-  }
-}
-
 const ShoppingCartModal = () => {
   const {
     cartCount,
-    shouldDisplayCart,
-    handleCartClick,
     cartDetails,
-    removeItem,
-    totalPrice,
     redirectToCheckout
   } = useShoppingCart();
+
+  async function handleCheckoutClick(event: any) {
+    event.preventDefault();
+    try {
+      const result = await redirectToCheckout();
+      if (result?.error) {
+        console.log("result");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
@@ -53,41 +54,23 @@ const ShoppingCartModal = () => {
             <div className="card-actions flex items-center justify-center m-auto">
               {cartCount && cartCount > 0 ? (
                 <>
-                  {Object.values(cartDetails ?? {}).map((product) => (
-                    <CartItem key={product.id} product={product} id={''} quantity={0} value={0} formattedValue={''} name={''} price={0} currency={''} />
+                  {Object.values(cartDetails ?? {}).map((entry) => (
+                    <CartItem key={entry.id} item={entry} id={''} quantity={0} value={0} formattedValue={''} name={''} price={0} currency={''} />
                   ))}
                 </>
               ) : (
                 <div className="h-36 flex items-center text-gray-400 text-xl">Your cart is empty</div>
               )}
-              <Link
-                href="/cart"
-                className="btn btn-block bg-[#ff7d1a] text-white border-none"
-                onClick={closeDropdown}
+              <div
+                className="btn btn-block bg-[#ff7d1a] text-white border-none hover:opacity-70 hover:bg-[#ff7d1a]"
+                onClick={handleCheckoutClick}
               >
                 Checkout
-              </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/*    <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
-      <SheetContent className="sm:max-w-lg w-[90vw]">
-        <SheetHeader>
-          <SheetTitle className='m-auto'>Shopping Cart</SheetTitle>
-        </SheetHeader>
-        {cartCount && cartCount > 0 ? (
-        <>
-          {Object.values(cartDetails ?? {}).map((product) => (
-            <CartItem key={product.id} product={product} id={''} quantity={0} value={0} formattedValue={''} name={''} price={0} currency={''} />
-          ))}
-        </>
-      ) : (
-        <div className="p-5">You have no items in your cart</div>
-      )}
-      </SheetContent>
-    </Sheet> */}
-
     </>
   )
 }
