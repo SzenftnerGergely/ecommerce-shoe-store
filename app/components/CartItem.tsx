@@ -3,7 +3,7 @@
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 import Image from 'next/image'
 import { CartEntry } from 'use-shopping-cart/core'
-import { FaTrash } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 
 export default function CartItem({ product }: CartEntry) {
     const { name, image, quantity, price } = product
@@ -17,23 +17,28 @@ export default function CartItem({ product }: CartEntry) {
     }
 
     return (
-        <div className='my-10'>
-            <div className="flex items-center gap-4 mb-3">
-                <div>
-                    {name} <span className="text-xs">({quantity})</span>
+        <div className='w-full flex items-center justify-between py-2'>
+            <Image 
+                src={image} 
+                alt={name} 
+                width={100} 
+                height={100} 
+            />
+
+            <div className='mr-auto'>
+                <span className='text-gray-400'>{name}</span>
+                <div className="flex gap-2">
+                    <div className='text-gray-400'>${price} x {quantity}</div> 
+                    <div className='font-bold'>${quantity * price}</div>
                 </div>
-                <div className="ml-auto">
-                    {quantity * price} $
-                </div>
-                <button
-                    onClick={() => removeItemFromCart()}
-                    className="hover:bg-emerald-50 transition-colors rounded-full duration-500 p-1"
-                >
-                    <FaTrash className="hover:scale-105 active:scale-100 translate-all duration-150" />
-                </button>
             </div>
-            <Image src={image} alt={name} width={100} height={100} />
-            <div className="divider divider-warning"></div>
+
+            <button
+                onClick={() => removeItemFromCart()}
+                className="hover:bg-emerald-50 transition-colors rounded-full duration-500 p-1"
+            >
+                <FaTrashAlt  className="hover:scale-105 active:scale-100 translate-all duration-150 text-gray-400 text-lg" />
+            </button>
         </div>
     )
 }

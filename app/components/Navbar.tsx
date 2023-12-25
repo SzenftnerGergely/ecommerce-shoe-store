@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { SheetDemo } from './SideBar'
 import { motion } from "framer-motion"
 import { useShoppingCart } from "use-shopping-cart"
+import ShoppingCartModal from './ShoppingCartModal'
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -45,7 +46,7 @@ const Navbar = () => {
                                     <Link
                                         href={link.href}
                                         className='text-lg font-semibold text-[#b6bcc8] trasition-all duration-100 
-                                        hover:text-[#1d2025] hover:border-b-4 pb-[3.3rem] hover:border-b-[#ff7d1a]'
+                                        hover:text-[#1d2025] hover:border-b-4 pb-[3.6rem] hover:border-b-[#ff7d1a]'
                                     >
                                         {link.name}
                                     </Link>
@@ -55,19 +56,15 @@ const Navbar = () => {
                     </nav>
                 </div>
 
-                <div className='flex items-center justify-between gap-10'>
+                <div className='flex items-center justify-between sm:gap-10'>
                     <div className='p-2 rounded-full relative'>
-                        <BsCart3
-                            className="w-7 h-7 text-[#b6bcc8] hover:text-black transition-all cursor-pointer"
-                            onClick={() => handleCartClick()}
-                        />
-                        <div className='absolute right-0 top-0 bg-[#ff7d1a] text-white px-2 text-xs rounded-full'>{cartCount}</div>
+                        <ShoppingCartModal />
                     </div>
 
                     <div>
                         <Image
                             className='hover:border-2 hover:border-[#ff7d1a] rounded-full 
-                            transition-all duration-75 cursor-pointer'
+                            transition-all duration-75 cursor-pointer h-10 w-10 sm:h-14 sm:w-14'
                             src="/image-avatar.png"
                             alt='avatar'
                             width={55}

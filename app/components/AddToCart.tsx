@@ -50,7 +50,7 @@ const AddToCart = ({ currency, description, image, name, price, price_id }: Prod
         <div className="flex justify-around items-center">
           <button
             onClick={decreaseQuantity}
-            className="hover:opacity-70 text-2xl font-bold hover:bg-gray-500
+            className="hover:opacity-70 text-2xl font-bold
             rounded-full transition-all duration-500 text-[#ff7d1a]"
           >
             -

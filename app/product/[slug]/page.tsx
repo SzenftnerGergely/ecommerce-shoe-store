@@ -39,7 +39,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
     return (
         <div className='bg-white mb-12 sm:mb-0'>
             <div className='mx-auto max-w-screen-xl px-4 md:px-8 sm:mt-28'>
-                <div className='grid gap-8 md:grid-cols-2'>
+                <div className='grid gap-8 md:gap-36 md:grid-cols-2'>
                     <ImageGallery images={data.images} />
 
                     <div className='md:py-8'>

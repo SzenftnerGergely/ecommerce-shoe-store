@@ -9,7 +9,7 @@ const Hero = () => {
             <div className='mb-8 flex flex-wrap justify-between md:mb-16'>
                 <div className='mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48'>
                     <h1 className='mb-4 tex-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl'>
-                        Welcome to Cool Shoes – Where Style Meets Comfort!
+                        Welcome to Sneaker Company – Where Style Meets Comfort!
                     </h1>
                     <p className='max-w-md leading-relaxed text-gray-500 xl:text-lg'>
                         Lace up and Step into the Future of Cool with our Sneakers – Where Street Style Meets Next-Level Comfort, delivering the Hottest Trends and Flyest Kicks at Prices that Keep You on Point!
