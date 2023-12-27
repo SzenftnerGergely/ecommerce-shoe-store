@@ -4,16 +4,15 @@ import React from 'react'
 import { links } from "@/lib/constants"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BsCart3 } from "react-icons/bs"
-import Image from 'next/image'
 import { SheetDemo } from './SideBar'
 import { motion } from "framer-motion"
-import { useShoppingCart } from "use-shopping-cart"
 import ShoppingCartModal from './ShoppingCartModal'
+import { UserButton, useUser, SignInButton } from "@clerk/nextjs";
+import { PiUser } from "react-icons/pi";
 
 const Navbar = () => {
     const pathname = usePathname()
-    const {handleCartClick, cartCount} = useShoppingCart()
+    const { isSignedIn } = useUser();
 
     return (
         <header>
@@ -56,23 +55,31 @@ const Navbar = () => {
                     </nav>
                 </div>
 
-                <div className='flex items-center justify-between sm:gap-10'>
+                <div className='flex items-center justify-between sm:gap-6'>
                     <div className='p-2 rounded-full relative'>
                         <ShoppingCartModal />
                     </div>
 
                     <div>
-                        <Image
-                            className='hover:border-2 hover:border-[#ff7d1a] rounded-full 
-                            transition-all duration-75 cursor-pointer h-10 w-10 sm:h-14 sm:w-14'
-                            src="/image-avatar.png"
-                            alt='avatar'
-                            width={55}
-                            height={55}
-                            priority
-                        />
+                        {isSignedIn ? (<UserButton afterSignOutUrl="/" />) : (
+                            <SignInButton>
+                                <div className='btn btn-ghost btn-circle'>
+                                    <PiUser className="text-4xl cursor-pointer" />
+                                </div>
+                            </SignInButton>
+                        )}
                     </div>
                 </div>
+
+                {/*<Image
+                    className='hover:border-2 hover:border-[#ff7d1a] rounded-full 
+                            transition-all duration-75 cursor-pointer h-10 w-10 sm:h-14 sm:w-14'
+                    src="/image-avatar.png"
+                    alt='avatar'
+                    width={55}
+                    height={55}
+                    priority
+                /> */}
 
             </div>
         </header>
